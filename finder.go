@@ -10,7 +10,8 @@ func finder(entryList []*SSHEntry) int {
 	idx, err := fuzzyfinder.Find(
 		entryList,
 		func(i int) string {
-			return fmt.Sprintf("[%s] %s", entryList[i].host, entryList[i].hostname)
+			//return fmt.Sprintf("[%s] %s", entryList[i].host, entryList[i].hostname)
+			return fmt.Sprintf("%s", entryList[i].host)
 		},
 		fuzzyfinder.WithPreviewWindow(func(i, width, _ int) string {
 			if i == -1 {
